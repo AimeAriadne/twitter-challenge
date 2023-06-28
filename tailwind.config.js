@@ -3,7 +3,11 @@ export const content = [
   "./src/**/*.{html,ts}",
 ];
 export const theme = {
-  extend: {},
+  extend: {
+    flexGrow: {
+      1: '1'
+    }
+  },
 };
 export const plugins = [];
 

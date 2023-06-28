@@ -1,0 +1,52 @@
+<div class="tweet-input">
+  <div class="container">
+    <img 
+      class="container-avatar"
+      [src]="user.image" 
+      [alt]="user.name"
+    >
+
+    <div class="container-content">
+      <textarea
+        class="content-input" 
+        rows="2"
+        placeholder="O que está acontecendo?"
+        [maxLength]="maxInputLength"
+        [(ngModel)]="tweet"
+      >
+      </textarea>
+      
+      <div 
+        class="content-preferences"
+        (click)="changePreferences()"
+      >
+        <fa-icon [icon]="faPreferences"></fa-icon>
+        
+        <p>{{ userPreferences }}</p>
+      </div>
+    
+      <div class="content-separator"></div>
+      
+      <div class="content-bottom">
+        <div class="bottom-icons">
+          <fa-icon 
+            *ngFor="let icon of icons"
+            class="icons-icon"
+            [icon]="icon"
+          >
+          </fa-icon>
+        </div>
+
+        <p class="bottom-counter">{{ maxInputLength - tweet.length }}</p>
+      
+        <button 
+          class="bottom-button"
+          (click)="sendTweet()"
+          [disabled]="!tweet"
+        >
+          Tweetar
+        </button>
+      </div>  
+    </div>
+  </div>
+</div>
