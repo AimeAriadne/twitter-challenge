@@ -1,0 +1,33 @@
+.home {
+  @apply
+    flex
+    flex-col
+    items-center
+    h-screen
+    w-screen
+}
+
+.container {
+  @apply 
+    m-10
+    border
+}
+
+.container-header {
+  @apply 
+    flex
+    justify-between
+    p-4
+    border-b
+}
+
+.header-title {
+  @apply
+    text-3xl
+    font-bold
+}
+
+.header-icon {
+  @apply
+    self-center
+}
