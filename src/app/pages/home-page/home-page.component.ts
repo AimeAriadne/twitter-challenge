@@ -26,9 +26,9 @@ export class HomePageComponent implements OnInit {
       this.tweetsList = tweets
     })
     this.user = {
-      name: this.tweetsList[0].user,
-      account: this.tweetsList[0].account,
-      image: this.tweetsList[0].image,
+      name: this.tweetsList[0]?.user || 'Jane',
+      account: this.tweetsList[0]?.account || '@jeez',
+      image: this.tweetsList[0]?.image || 'https://picsum.photos/200',
     }
   }
 
