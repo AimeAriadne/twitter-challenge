@@ -30,8 +30,13 @@ export class TweetContentComponent implements OnInit {
   isMenuOpen: boolean = false
   isDialogShown: boolean = false
 
+  passedTime: string | undefined
+  interval: ReturnType<typeof setInterval> | undefined
+
   ngOnInit(): void {
-   
+    this.interval = setInterval(() => {
+      this.passedTime = this.checkPassedTime()
+    }, 1000)
   }
 
   showMenu(): void {
@@ -52,5 +57,15 @@ export class TweetContentComponent implements OnInit {
     this.deleteTweetEvent.emit()
   }
 
-  
+  checkPassedTime(): string {
+    let now = new Date().getTime()
+    let passedSeconds =  Math.round((now - this.tweet.time) / 1000)
+    if (passedSeconds < 59) {
+      return passedSeconds + 's'
+    } else {
+      clearInterval(this.interval)
+      let timeStamp =  new Date(this.tweet.time).toLocaleString()
+      return timeStamp
+    }
+  }
 }
