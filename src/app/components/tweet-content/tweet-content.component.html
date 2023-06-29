@@ -1,0 +1,73 @@
+<div class="tweet-input">
+  <div class="container">
+    <img 
+      class="container-avatar"
+      [src]="tweet.image" 
+      [alt]="tweet.user"
+    >
+
+    <div class="container-tweet">
+      <div class="tweet-header">
+        <p class="header-name">{{ tweet.user }}</p>
+        
+        <p class="header-account">{{ tweet.account }}</p>
+        
+        <span>&bull;</span>
+
+        <p class="header-time">{{ tweet.time }}</p>
+      </div>
+      
+      <p class="tweet-content">{{ tweet.tweet }}</p>
+      
+      <div class="tweet-bottom">
+        <fa-icon 
+          *ngFor="let icon of icons"
+          class="bottom-icon"
+          [icon]="icon"
+        >
+        </fa-icon>
+      </div>  
+    </div>
+
+    <div class="container-menu">
+      <button (click)="showMenu()">
+        <fa-icon [icon]="faEllipsis"></fa-icon>
+      </button>
+
+      <div 
+        *ngIf="isMenuOpen"
+        class="menu-content"
+      >
+        <button
+          class="content-delete"
+          (click)="showDialog()"
+        >
+          Excluir
+        </button>
+      </div>
+
+      <div 
+        *ngIf="isDialogShown"
+        class="menu-dialog"
+      >
+        <p>Deseja mesmo excluir?</p>
+        
+        <div class="dialog-actions">
+          <button
+            class="actions-cancel"
+            (click)="hideDialog()"
+          >
+            Não
+          </button>
+          <button
+            class="actions-delete"
+            (click)="deleteTweet()"
+          >
+            Sim
+          </button>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</div>
