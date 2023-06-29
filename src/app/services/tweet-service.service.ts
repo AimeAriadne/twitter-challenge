@@ -17,4 +17,10 @@ export class TweetService {
     tweetsList.push(tweet)
     localStorage.setItem('tweets', JSON.stringify(tweetsList))
   }
+
+  deleteTweet(index: number) {
+    const tweetsList = this.tweetsSubject.getValue()
+    tweetsList.splice(index, 1)
+    localStorage.setItem('tweets', JSON.stringify(tweetsList))
+  }
 }

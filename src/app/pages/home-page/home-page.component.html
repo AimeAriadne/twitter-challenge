@@ -16,6 +16,7 @@
     <app-tweet-content
       *ngFor="let tweet of tweetsList; index as i;"
       [tweet]="tweet"
+      (deleteTweetEvent)="deleteTweet(i)"
     >
     </app-tweet-content>
   </div>

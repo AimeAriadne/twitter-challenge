@@ -31,4 +31,11 @@ export class HomePageComponent implements OnInit {
       image: this.tweetsList[0].image,
     }
   }
+
+  deleteTweet(i: number) {
+    let tweetIndex = this.tweetsList.findIndex((el, index) => {
+      return i === index
+    })
+    this.TweetService.deleteTweet(tweetIndex)
+  }  
 }
