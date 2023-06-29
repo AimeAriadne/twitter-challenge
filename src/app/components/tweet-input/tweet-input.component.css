@@ -10,7 +10,8 @@
   @apply
     rounded-full
     border
-    h-16
+    h-10
+    md:h-16
 }
 
 .container-content {
@@ -75,4 +76,15 @@
   @apply
     bg-sky-200
     cursor-not-allowed
+}
+
+.button-icon {
+  @apply
+    md:hidden
+}
+
+.button-label {
+  @apply
+    hidden
+    md:inline
 }

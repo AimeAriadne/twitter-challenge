@@ -11,4 +11,10 @@ export class TweetService {
   private tweetsSubject = new BehaviorSubject<ITweet[]>(this.localList ? JSON.parse(this.localList) : [])
 
   public tweets = this.tweetsSubject.asObservable()
+
+  addTweet(tweet: ITweet) {
+    const tweetsList = this.tweetsSubject.getValue()
+    tweetsList.push(tweet)
+    localStorage.setItem('tweets', JSON.stringify(tweetsList))
+  }
 }

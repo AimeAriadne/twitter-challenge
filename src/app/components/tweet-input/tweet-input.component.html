@@ -44,7 +44,12 @@
           (click)="sendTweet()"
           [disabled]="!tweet"
         >
-          Tweetar
+          <fa-icon 
+            class="button-icon"
+            [icon]="faPaperPlane"
+          >
+          </fa-icon>
+          <span class="button-label">Tweetar</span>
         </button>
       </div>  
     </div>

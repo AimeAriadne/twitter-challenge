@@ -9,8 +9,9 @@
 
 .container {
   @apply 
-    m-10
+    mt-10
     border
+    xl:w-6/12
 }
 
 .container-header {
