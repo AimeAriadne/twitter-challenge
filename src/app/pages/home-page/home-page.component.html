@@ -13,5 +13,10 @@
     </div>
     
     <app-tweet-input [user]="user"></app-tweet-input>
+    <app-tweet-content
+      *ngFor="let tweet of tweetsList; index as i;"
+      [tweet]="tweet"
+    >
+    </app-tweet-content>
   </div>
 </div>
